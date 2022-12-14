@@ -3,9 +3,7 @@
   <HeaderComponent></HeaderComponent>
   <!-- SECTION -->
   <section>
-    <div class="inner">
-      이미지 준비중입니다.
-    </div>
+    <router-view></router-view>
   </section>
   <!-- FOOTER -->
   <FooterComponent></FooterComponent>
