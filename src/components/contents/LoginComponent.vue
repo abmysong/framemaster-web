@@ -5,10 +5,30 @@
     </div>
     <div class="login-area">
       <form onsubmit="event.preventDefault();">
-        <input type="text" placeholder="아이디">
-        <input type="password" placeholder="비밀번호">
-        <button>확인</button>
+        <input type="text" placeholder="아이디" v-model="member.id">
+        <input type="password" placeholder="비밀번호" v-model="member.password">
+        <button @click="membersLogin(member)">확인</button>
       </form>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  computed: {
+    member() {
+      return this.$store.state.$members.member
+    }
+  },
+  methods: {
+    membersLogin(member) {
+      this.$store.dispatch('membersLogin', member)
+    }
+  },
+  created() {
+    console.log(this.member)
+    this.member.id = ''
+    this.member.password = ''
+  }
+}
+</script>
