@@ -22,7 +22,16 @@ export default {
   },
   methods: {
     membersLogin(member) {
-      this.$store.dispatch('membersLogin', member)
+      const callback = () => {
+        // this.$router.push('/?abc=123')
+        this.$router.push({name: 'Home', query: {
+          abc: 123
+        }})
+      }
+      this.$store.dispatch('membersLogin', {
+        member,
+        callback
+      })
     }
   },
   created() {
