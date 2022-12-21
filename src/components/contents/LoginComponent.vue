@@ -4,10 +4,10 @@
       <h3>로그인</h3>
     </div>
     <div class="login-area">
-      <form onsubmit="event.preventDefault();">
+      <form @submit.prevent="membersLogin(member)">
         <input type="text" placeholder="아이디" v-model="member.id">
         <input type="password" placeholder="비밀번호" v-model="member.password">
-        <button @click="membersLogin(member)">확인</button>
+        <button>확인</button>
       </form>
     </div>
   </div>

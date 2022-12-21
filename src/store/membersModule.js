@@ -13,8 +13,12 @@ export const membersModule = {
   actions: {
     membersLogin(thisStore, member) {
       axios.post('http://localhost:3100/api/v1/members/login', member)
-    .then(function(response) {
-      console.log('Done membersLogin', response)
-    })}
+      .then(function(response) {
+        console.log('Done membersLogin', response)
+      })
+      .catch(function(error) {
+        thisStore.dispatch('axiosError', error)
+      })
+    }
   }
 }
